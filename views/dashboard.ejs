@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decagon Clinc Doctor Dashboard</title>
+    <link rel="stylesheet" href="../stylesheets/doctor.css">
+</head>
+<body>
+    <header>
+        <form id="logoutForm" action="/doctors/logout" method="get" class="logout-form">
+            <button type="submit" class="logout-button">Logout</button>
+          </form>
+    </header>
+    <h1> Doctors Dashboard </h1>
+
+    <h2> Welcome, <%= doctorsName %> </h2>
+    <h2> REPORTS </h2>
+    <button id="openReportModalBtn"
+    class="add-doctor-button">Create Report</button>
+
+    <div id="reportModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeReportModalBtn">&times;</span>
+            <h2>Create Report</h2>
+            <form action="/reports/report" method="post">
+        <label for="patientId">Patient Id:</label>
+        <input type="text" id="patientId" name="patientId" required />
+
+        <label for="patientName">Patient's Name:</label>
+        <input type="text" id="patientName" name="patientName" required />
+
+        <label for="age">Age:</label>
+        <input type="number" id="Age" name="age" required />
+
+        <label for="hospitalName">Hospital Name:</label>
+        <input type="text" id="hospitalName" name="hospitalName" required />
+
+        <label for="weight">Weight:</label>
+        <input type="text" id="weight" name="weight" required />
+
+        <label for="height">Height:</label>
+        <input type="text" id="height" name="height" required />
+
+        <label for="bloodGroup">Blood Group:</label>
+        <input type="text" id="bloodGroup" name="bloodGroup" required />
+
+        <label for="genotype">Genotype:</label>
+        <input type="text" id="genotype" name="genotype" required />
+
+        <label for="bloodPressure">Blood Pressure:</label>
+        <input type="text" id="bloodPressure" name="bloodPressure" required />
+
+        <label for="HIV_status">HIV Status:</label>
+        <input type="text" id="HIV_status" name="HIV_status" required />
+
+        <label for="hepatitis">Hepatitis:</label>
+        <input type="text" id="hepatitis" name="hepatitis" required />
+
+        <button type="submit">Create Report</button>
+       
+    </form>
+</div>
+</div>
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeEditModalBtn">&times;</span>
+        <h2>Edit Report</h2>
+        <form id="editForm">
+        <!-- Add input fields for editing report details -->
+        <label for="editPatientId">Patient Id:</label>
+        <input type="text" id="editPatientId">
+        <label for="editPatientName">Patient's Name:</label>
+        <input type="text" id="editPatientName">
+
+        <label for="editAge">Age:</label>
+        <input type="number" id="editAge">
+
+        <label for="editHospitalName">Hospital Name:</label>
+        <input type="text" id="editHospitalName">
+
+        <label for="editWeight">Weight:</label>
+        <input type="text" id="editWeight">
+
+        <label for="editHeight">Height:</label>
+        <input type="text" id="editHeight">
+
+        <label for="editBloodGroup">Blood Group:</label>
+        <input type="text" id="editBloodGroup">
+
+        <label for="editGenotype">Genotype:</label>
+        <input type="text" id="editGenotype">
+
+        <label for="editBloodPressure">Blood Pressure:</label>
+        <input type="text" id="editBloodPressure">
+
+        <label for="editHIV_status">HIV Status:</label>
+        <input type="text" id="editHIV_status">
+
+        <label for="editHepatitis">Hepatitis:</label>
+        <input type="text" id="editHepatitis">
+        <!-- Add other input fields as needed -->
+
+        <button type="button" id="saveEditBtn">Save Changes</button>
+        </form>
+    </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div id="deleteModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeDeleteModalBtn">&times;</span>
+        <h2>Delete Report</h2>
+        <p>Are you sure you want to delete this report?</p>
+        <button type="button" id="confirmDeleteBtn">Yes, Delete</button>
+    </div>
+</div>
+
+<div id="reportList" class="flex-container">
+
+</div>
+<div class="pagination">
+    <button id="prevPageBtn">Previous Page</button>
+    <span id="currentPage">1</span> / <span id="totalPages">5</span>
+    <button id="nextPageBtn">Next Page</button>
+
+
+<script src="../javascripts/doctor.js"></script>
+</body>
+</html>

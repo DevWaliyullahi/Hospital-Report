@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Admin Dashboard </title>
+    <link rel="stylesheet" href="../stylesheets/admin.css">
+</head>
+<body>  
+    <header>  
+        <form id="logoutForm" action="/doctors/logout" method="get" class="logout-form">
+            <button type="submit" class="logout-button">Logout</button>
+          </form>
+        </header>
+    <h2> Welcome, <%= doctorsName %> </h2>
+        <button id="openModalBtn" class="add-doctor-button">Add a Doctor</button>
+    <h3> DOCTORS </h3>
+    
+        <div id="doctorRegistrationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalBtn">&times;</span>
+            <h3>Register a New Doctor</h3>
+            <form action="/admin/reg" method="post">
+                <label for="doctorsName">Doctor's Name:</label>
+                    <input type="text" id="doctorsName" name="doctorsName" required />
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required />
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required />
+
+                    <label for="gender"> Gender: </label>
+                    <select name="gender" id="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    </select>
+
+                    <label for="specialization">Specializations:</label>
+                    <input type="text" id="specialization" name="specializations" required />
+
+                    <label for="phoneNumber">Phone Number:</label>
+                    <input type="tel" id="phonenumber" name="phoneNumber" required />
+
+                    <button type="submit"> Create New Doctor </button>
+            </form>
+        </div>
+        </div>
+
+        <div id="doctorList" class="flex-container">
+
+    </div>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span id="closeEditModalBtn" class="close">&times;</span>
+            <h2>Edit Doctor</h2>
+            <form id="editForm">
+                <!-- Edit Doctor Form Elements -->
+                <label for="editDoctorsName">Doctor's Name:</label>
+                <input type="text" id="editDoctorsName" name="editDoctorsName" required />
+                <label for="editPhoneNumber"> Phone Number:</label>
+                <input type="tel" id="editPhoneNumber" name="editPhoneNumber" required />
+                <label for="editEmail">Email:</label>
+                <input type="email" id="editEmail" name="editEmail" required />
+                <label for="editSpecialization">Specializations:</label>
+                <input type="text" id="editSpecialization" name="editSpecialization" required />
+
+
+                <!-- Add other fields here -->
+
+                <button type="button" id="saveEditBtn">Save</button>
+                
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Doctor Modal -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <span id="closeDeleteModalBtn" class="close">&times;</span>
+            <h2>Delete Doctor</h2>
+            <p>Are you sure you want to delete this doctor?</p>
+            <button type="button" id="confirmDeleteBtn">Delete</button>
+        </div>
+    </div>
+    <div class="pagination">
+        <button id="prevPageBtn">Previous Page</button>
+        <span id="currentPage">1</span> / <span id="totalPages">1</span>
+        <button id="nextPageBtn">Next Page</button>
+      </div>
+
+    <h3> REPORTS </h3>
+
+
+    
+    <script src="../javascripts/admin.js"></script>
+</body>
+</html>

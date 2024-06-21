@@ -1,0 +1,150 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ffcccc, #ff99cc);
+    color: #0e0d0d;
+}
+.modal {
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Add this to your doctor.css file */
+
+#reportList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 20px;
+  padding: 20px;
+}
+
+.reportCard {
+  padding: 20px; /* Reduced padding for better consistency */
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /*width: 100%; /* Adjusted to fill the available space in the grid */
+  max-width: 300px; /* Set a maximum width to prevent excessive stretching */
+  margin-bottom: 20px;
+  overflow: auto;
+}
+
+.reportCard p {
+  margin: 5px 0;
+}
+
+.editButton,
+.deleteButton {
+  background-color: #1461dc; /* Green */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5px;
+  /* transition: background-color 0.3s; */
+}
+
+.editButton:hover,
+.deleteButton:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.logout-form {
+  text-align: right;
+  margin: 10px; /* Add margin to the form for spacing */
+}
+
+
+.logout-button,
+.add-doctor-button {
+  background-color: blue;
+  text-align: right;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px; /* Adjust margin as needed */
+}
+
+.logout-button:hover,
+.add-doctor-button:hover {
+  background-color: blue; 
+}
+
+/* Styles for Report Modal */
+#reportModal .modal-content {
+  width: 80%; /* Adjust the width as needed */
+  max-width: 400px; /* Max width for responsiveness*/
+  margin: 0 auto; /*Center the modal horizontally*/
+  padding: 20px; /*Add padding for better spacing*/
+  overflow-y: auto; /* Enable scrolling */
+  max-height: 80vh; /* Max height for responsiveness */
+}
+
+/* Adjust form layout to be vertical */
+#reportModal form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Adjust label styles for better spacing */
+#reportModal label {
+  margin-bottom: 8px;
+}
+
+/* Adjust input styles for better spacing */
+#reportModal input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  /* width: 100%; Make inputs full-width */
+}
+
+/* Adjust button styles for better spacing */
+#reportModal button {
+  background-color: #1e7bed; /* Blue color for contrast */
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  /* width: 100%; Make button full-width */
+}
+
+#reportModal button:hover {
+  background-color: #27ae60; /* Darker green on hover */
+}
